@@ -172,6 +172,22 @@
                         @endauth
                 </div>
             </nav>
+
+            <div style="margin:10px 0; display:flex; gap:8px; align-items:center; justify-content:center;">
+                <span style="color:black; font-weight:bold;">Tìm kiếm theo</span>
+                    <a href="{{ url('caycanh/loc?sapxep=gia-tang-dan') }}">
+                        <button class="btn btn-outline-dark btn-sm">Giá tăng dần</button>
+                    </a>
+                    <a href="{{ url('caycanh/loc?sapxep=gia-giam-dan') }}">
+                        <button class="btn btn-outline-dark btn-sm">Giá giảm dần</button>
+                    </a>
+                    <a href="{{ url('caycanh/loc?filter=de-cham-soc') }}">
+                        <button class="btn btn-outline-dark btn-sm">Dễ chăm sóc</button>
+                    </a>
+                    <a href="{{ url('caycanh/loc?filter=chiu-duoc-bong-ram') }}">
+                        <button class="btn btn-outline-dark btn-sm">Chịu được bóng râm</button>
+                    </a>
+            </div>
         </div>
     </header>
     <main class='container'>
