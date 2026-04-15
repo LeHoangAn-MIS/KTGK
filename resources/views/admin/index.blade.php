@@ -10,7 +10,7 @@
 
     <h3 class="text-center text-primary fw-bold my-3">QUẢN LÝ SẢN PHẨM</h3>
 
-    <a href="#" class="btn btn-success mb-3">Thêm</a>
+    <a href="{{ url('admin/sanpham/them') }}" class="btn btn-success mb-3">Thêm</a>
 
     <div style="width:100%; overflow-x:auto;">
         <table id="id-table" class="table table-bordered table-hover bg-white">

@@ -20,4 +20,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/admin/sanpham', [AdminController::class, 'admin']);
 Route::get('/admin/sanpham/xoa/{id}', [AdminController::class, 'xoa']);
-Route::get('/admin/sanpham/xem/{id}', [AdminController::class, 'xem']);
+Route::get('admin/sanpham/them', [AdminController::class, 'them']);
+Route::post('admin/sanpham/them', [AdminController::class, 'luu']);
