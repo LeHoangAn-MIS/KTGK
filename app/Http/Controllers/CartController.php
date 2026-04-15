@@ -30,8 +30,7 @@ class CartController extends Controller
         $quantity = $request->input('quantity', 1);
 
         $product = DB::table('san_pham')->where('id', $productId)->first();
-
-        if (!$product) return redirect()->back();
+        if (!$product) return response()->json(['success' => false], 404);
 
         $cart = session()->get('cart', []);
 
@@ -39,15 +38,22 @@ class CartController extends Controller
             $cart[$productId]['quantity'] += $quantity;
         } else {
             $cart[$productId] = [
-                "name" => $product->ten_san_pham,
+                "name"     => $product->ten_san_pham,
                 "quantity" => $quantity,
-                "price" => $product->gia_ban,
-                "image" => $product->hinh_anh
+                "price"    => $product->gia_ban,
+                "image"    => $product->hinh_anh
             ];
         }
 
         session()->put('cart', $cart);
-        return redirect()->route('cart.index');
+
+        $totalQuantity = count($cart);
+
+        return response()->json([
+            'success'        => true,
+            'message'        => 'Đã thêm vào giỏ hàng!',
+            'total_quantity' => $totalQuantity
+        ]);
     }
 
 public function checkout(Request $request) {

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController2;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminProductController;
 
@@ -17,7 +16,8 @@ Route::get('/dashboard', function () {
 
 
 //Câu 3:
-Route::get('/sanpham/{id}', [ProductController2::class, 'show'])->name('product.show');
+// Nếu cần
+Route::get('/caycanh/chitiet/{id}', [HomeController::class, 'chitiet'])->name('caycanh.chitiet');
 
 //câu 4
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

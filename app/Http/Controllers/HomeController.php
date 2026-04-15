@@ -49,4 +49,15 @@ class HomeController extends Controller
         $data = $query->get();
         return view("caycanh.index", compact("data"));
     }
+
+    public function chitiet($id) {
+        $result = DB::select("select * from san_pham where id = ?", [$id]);
+        
+        if (empty($result)) {
+            abort(404);
+        }
+        
+        $data = $result[0];
+        return view('caycanh.chitiet', compact('data'));
+    }
 }

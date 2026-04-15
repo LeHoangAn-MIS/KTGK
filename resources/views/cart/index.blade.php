@@ -6,48 +6,47 @@
             <div class="alert alert-success text-center">{{ session('success') }}</div>
         @endif
 
-        <table class="table table-bordered text-center align-middle">
-            <thead class="table-light">
+        <table class="table table-bordered align-middle">
+            <thead>
                 <tr>
-                    <th>STT</th>
+                    <th style="width:50px">STT</th>
                     <th>Tên sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Đơn giá</th>
-                    <th>Xóa</th>
+                    <th style="width:100px" class="text-center">Số lượng</th>
+                    <th style="width:120px" class="text-center">Đơn giá</th>
+                    <th style="width:60px" class="text-center">Xóa</th>
                 </tr>
             </thead>
             <tbody>
                 @php $stt = 1; @endphp
                 @foreach($cart as $id => $item)
                 <tr>
-                    <td>{{ $stt++ }}</td>
-                    <td class="text-start">{{ $item['name'] }}</td>
-                    <td>{{ $item['quantity'] }}</td>
-                    <td>{{ number_format($item['price'], 0, ',', '.') }}đ</td>
-                    <td>
+                    <td class="text-center">{{ $stt++ }}</td>
+                    <td>{{ $item['name'] }}</td>
+                    <td class="text-center">{{ $item['quantity'] }}</td>
+                    <td class="text-center">{{ number_format($item['price'], 0, ',', '.') }}đ</td>
+                    <td class="text-center">
                         <a href="{{ route('cart.remove', $id) }}" class="btn btn-danger btn-sm">Xóa</a>
                     </td>
                 </tr>
                 @endforeach
                 <tr>
-                    <td colspan="3" class="fw-bold"><strong>Tổng cộng</strong></td>
-                    <td class="fw-bold"><strong>{{ number_format($total, 0, ',', '.') }}đ</strong></td>
-                    
+                    <td colspan="3" class="text-end fw-bold">Tổng cộng</td>
+                    <td class="text-center fw-bold">{{ number_format($total, 0, ',', '.') }}đ</td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
 
-        <form action="{{ route('cart.checkout') }}" method="POST" class="text-center mt-4">
+        <form action="{{ route('cart.checkout') }}" method="POST" class="text-center mt-3">
             @csrf
-            <div class="mb-2">
+            <div class="mb-3">
                 <label class="fw-bold d-block mb-3"><strong>Hình thức thanh toán</strong></label>
-                <select name="hinh_thuc_thanh_toan" class="form-select w-25 mx-auto">
+                <select name="hinh_thuc_thanh_toan" class="form-select mx-auto" style="width:150px; height:40px;">
                     <option value="1">Tiền mặt</option>
                     <option value="2">Chuyển khoản</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary px-5 fw-bold">ĐẶT HÀNG</button>
+            <button type="submit" class="btn btn-primary px-3">ĐẶT HÀNG</button>
         </form>
     </div>
 </x-cay-canh-layout>
-
