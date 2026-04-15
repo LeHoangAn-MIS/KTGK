@@ -60,4 +60,12 @@ class HomeController extends Controller
         $data = $result[0];
         return view('caycanh.chitiet', compact('data'));
     }
+
+    public function timkiem(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $data = DB::select("select * from san_pham where ten_san_pham like ?", ['%' . $keyword . '%']);
+        return view('caycanh.index', compact('data', 'keyword'));
+    }
 }

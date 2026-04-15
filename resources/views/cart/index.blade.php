@@ -1,6 +1,7 @@
 <x-cay-canh-layout>
+    <x-slot name="title">Giỏ hàng</x-slot>
     <div class="container py-4">
-        <h4 class="text-center text-primary fw-bold mb-4">DANH SÁCH SẢN PHẨM</h4>
+        <h3 class="text-center text-primary fw-bold my-3">DANH SÁCH SẢN PHẨM</h3>
         
         @if(session('success'))
             <div class="alert alert-success text-center">{{ session('success') }}</div>
@@ -30,8 +31,8 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <td colspan="3" class="text-end fw-bold">Tổng cộng</td>
-                    <td class="text-center fw-bold">{{ number_format($total, 0, ',', '.') }}đ</td>
+                    <td colspan="3" class="text-center fw-bold"><b>Tổng cộng</b></td>
+                    <td class="text-center fw-bold"><b>{{ number_format($total, 0, ',', '.') }}đ</td>
                     <td></td>
                 </tr>
             </tbody>

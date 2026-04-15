@@ -14,7 +14,7 @@
             <div class="text-center p-2">
                 <div class="p-2">
                     <img src="{{ asset('storage/image/' . $data->hinh_anh) }}" 
-                         style="width: 100%; max-height: 280px; object-fit: contain;"
+                         style="width: 100%; max-height: 350px; object-fit: contain;"
                          alt="{{ $data->ten_san_pham }}">
                 </div>
             </div>

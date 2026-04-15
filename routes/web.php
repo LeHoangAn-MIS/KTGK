@@ -3,8 +3,6 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\AdminProductController;
-
 use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -26,7 +24,7 @@ Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add'); //cÃ
 Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
-Route::get('/timkiem', ['App\Http\Controllers\SanPhamController', 'search'])->name('search');
+Route::get('/timkiem', [HomeController::class, 'timkiem'])->name('caycanh.timkiem');
 
 Route::get('/admin/sanpham', [AdminController::class, 'admin']);
 Route::get('/admin/sanpham/xoa/{id}', [AdminController::class, 'xoa']);

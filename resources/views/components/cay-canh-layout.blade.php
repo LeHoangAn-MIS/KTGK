@@ -6,7 +6,6 @@
     <title>{{ $title ?? 'Cây cảnh' }}</title>
     <link rel="stylesheet" href="{{asset('library/bootstrap.min.css')}}">
 
-    <script src="{{asset('library/jquery.slim.min.js')}}"></script>
     <script src="{{asset('library/popper.min.js')}}"></script>
     <script src="{{asset('library/bootstrap.bundle.min.js')}}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

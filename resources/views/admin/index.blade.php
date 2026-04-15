@@ -1,5 +1,5 @@
 <x-cay-canh-layout>
-    <x-slot name="title">Quản lý sản phẩm</x-slot>  {{-- Đóng ngay lập tức --}}
+    <x-slot name="title">Quản lý sản phẩm</x-slot> 
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show">
@@ -43,7 +43,7 @@
                             style="border-radius:4px; object-fit:contain; height:70px;">
                     </td>
                     <td style="white-space:nowrap;">
-                        <a href="{{ url('admin/sanpham/xem/' . $row->id) }}"
+                        <a href="{{ route('caycanh.chitiet', $row->id) }}"
                         class="btn btn-primary btn-sm">Xem</a>
                         <a href="{{ url('admin/sanpham/xoa/' . $row->id) }}"
                         class="btn btn-danger btn-sm"
@@ -67,6 +67,12 @@
                  "<'row'<'col-sm-12'tr>>" +
                  "<'row'<'col-sm-5'i><'col-sm-7 text-right'p>>",
         });
+    });
+    </script>
+    <script>
+    $('#id-table tbody').on('click', 'tr', function (e) {
+        if ($(e.target).closest('a').length) return;
+        e.stopPropagation();
     });
     </script>
 </x-cay-canh-layout>

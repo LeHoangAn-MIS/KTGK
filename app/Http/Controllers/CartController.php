@@ -85,7 +85,6 @@ public function checkout(Request $request) {
         $orderDetails[] = $details;
     }
 
-    // 3. Chuẩn bị dữ liệu và Gửi Mail qua Notification (Chuẩn bài 5)
     $orderData = [
         'orderId' => $orderId,
         'orderDate' => now()->format('d/m/Y H:i'),
@@ -98,7 +97,7 @@ public function checkout(Request $request) {
 
     // 4. Xóa giỏ và chuyển hướng
     session()->forget('cart');
-    return redirect()->route('cart.index')->with('success', 'Thanh toán thành công! Kiểm tra email nhé.');
+    return redirect()->route('cart.index')->with('success', 'Đặt hàng thành công! Vui lòng kiểm tra email.');
 }
 
     // 4. Xóa sản phẩm khỏi giỏ hàng
@@ -108,6 +107,6 @@ public function checkout(Request $request) {
             unset($cart[$id]);
             session(['cart' => $cart]);
         }
-        return redirect()->back()->with('success');
+        return redirect()->back()->with('success', 'Sản phẩm đã được xóa khỏi giỏ hàng.');
     }
 }
