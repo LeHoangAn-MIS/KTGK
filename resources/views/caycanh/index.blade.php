@@ -4,23 +4,28 @@
     </x-slot>
     
 </x-cay-canh-layout>
-
-<div class="row list-cay-canh mt-4"> @foreach ($cayCanh as $cay)
-        <div class="col-md-3 mb-4"> <div class="card h-100 border-success shadow-sm cay-canh"> <img src="{{ asset('storage/image/' . $cay->hinh_anh) }}" 
-                     class="card-img-top p-2" 
-                     alt="{{ $cay->ten_cay }}">
-
-                <div class="card-body d-flex flex-column text-center cay-canh-info"> <h5 class="card-title fw-bold text-success">{{ $cay->ten_cay }}</h5>
-                    
-                    <p class="card-text text-danger fw-bold mt-auto" style="font-style: italic;">
-                        {{ number_format($cay->don_gia, 0, ',', '.') }} VNĐ
-                    </p>
-                    
-                    <a href="{{ route('product.show', $cay->id) }}" class="btn btn-outline-success btn-sm mt-2">
-                        Xem chi tiết
-                    </a>
+        <div style="margin:10px 0; display:flex; gap:8px; align-items:center; justify-content:center;">
+            <span style="color:black; font-weight:bold;">Tìm kiếm theo</span>
+                <a href="{{ url('caycanh/loc?sapxep=gia-tang-dan') }}">
+                    <button class="btn btn-outline-dark btn-sm">Giá tăng dần</button>
+                </a>
+                <a href="{{ url('caycanh/loc?sapxep=gia-giam-dan') }}">
+                    <button class="btn btn-outline-dark btn-sm">Giá giảm dần</button>
+                </a>
+                <a href="{{ url('caycanh/loc?filter=de-cham-soc') }}">
+                    <button class="btn btn-outline-dark btn-sm">Dễ chăm sóc</button>                    
+                </a>
+                <a href="{{ url('caycanh/loc?filter=chiu-duoc-bong-ram') }}">
+                    <button class="btn btn-outline-dark btn-sm">Chịu được bóng râm</button>
+                </a>
+        </div>
+        <div class='list-cay-canh'>
+            @foreach($data as $row)
+                <div class="cay-canh">
+                        <img src="{{ asset('storage/image/' . $row->hinh_anh) }}"  style="width:100%; height:180px; object-fit:contain;"><br>
+                        <b>{{$row->ten_san_pham}}</b><br/>
+                        <i style="color:red; font-weight:bold;">{{number_format($row->gia_ban,0,",",".")}}đ</i>
                 </div>
-            </div>
-            </div>
-    @endforeach
-</div>
+            @endforeach
+        </div>
+</x-cay-canh-layout>
