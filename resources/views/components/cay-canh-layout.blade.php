@@ -127,8 +127,7 @@
                         </ul>
                     </div>
                     <div class="search-bar">
-                        <form method="post" action="{{url('/timkiem')}}">
-                            {{ csrf_field() }}
+                        <form method="GET" action="{{url('/timkiem')}}">
                             <input type="text" name="keyword" placeholder="Tìm kiếm cây cảnh...">
                             <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
