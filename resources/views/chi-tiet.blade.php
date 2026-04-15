@@ -8,7 +8,7 @@
             
             <div class="col-md-4 text-center">
                 <div class="product-image-container">
-                    <img src="{{ asset('image/' . $product->hinh_anh) }}" 
+                    <img src="{{ asset('storage/image/' . $product->hinh_anh) }}" 
                          class="img-fluid rounded shadow-sm w-100" 
                          style="max-height: 450px; object-fit: contain;"
                          alt="{{ $product->ten_san_pham }}">
