@@ -16,7 +16,7 @@
                         {{ number_format($cay->don_gia, 0, ',', '.') }} VNĐ
                     </p>
                     
-                    <a href="{{ route('product.show', $cay->id) }}" class="btn btn-outline-success btn-sm mt-2">
+                    <a href="{{ route('product.show', $cay->id) }}" class="btn btn-success">
                         Xem chi tiết
                     </a>
                 </div>
