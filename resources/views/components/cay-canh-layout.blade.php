@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$title}}</title>
+    <title>{{ $title ?? 'Cây cảnh' }}</title>
     <link rel="stylesheet" href="{{asset('library/bootstrap.min.css')}}">
 
     <script src="{{asset('library/jquery.slim.min.js')}}"></script>
@@ -141,7 +141,7 @@
                                     0
                                 @endif
                         </div>
-                        <a href="{{url('/gio-hang')}}" style='cursor:pointer;color: #2f5d3a;;'>
+                        <a href="{{ route('cart.index') }}" style='cursor:pointer;color: #2f5d3a;;'>
                             <i class="fa fa-cart-arrow-down fa-2x mr-2 mt-1" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -176,6 +176,5 @@
     <main class='container'>
         {{$slot}}
     </main>
-
 </body>
 </html>

@@ -19,9 +19,10 @@ class User extends Authenticatable
 
     /**
      * Get the attributes that should be cast.
-     *
+     * @var array<int, string>
      * @return array<string, string>
      */
+    
     protected function casts(): array
     {
         return [
