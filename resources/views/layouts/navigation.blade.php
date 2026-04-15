@@ -17,9 +17,6 @@
                     </x-nav-link>
                 </div>
             </div>
-            <form action="{{ route('search') }}" method="GET">
-                <input type="text" name="keyword" placeholder="Tìm cây...">
-                    <button type="submit">Tìm</button>
             </form>
             <!-- Settings Dropdown -->
             @auth

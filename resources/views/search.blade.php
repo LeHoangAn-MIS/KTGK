@@ -1,7 +1,9 @@
-@extends('layouts.app')
+<x-cay-canh-layout>
+    <x-slot name="title">
+        Cây cảnh
+    </x-slot>
 
-@section('content')
-<div class="container mt-4">
+    <div class="container mt-4">
 
     <h2>Kết quả: "{{ $keyword }}"</h2>
 
@@ -27,4 +29,5 @@
     </div>
 
 </div>
-@endsection
+</x-cay-canh-layout>
+

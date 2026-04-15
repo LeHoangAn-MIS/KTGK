@@ -15,7 +15,7 @@ class SanPhamController extends Controller
         ->where('status', 1)
         ->get();
 
-    return view('search', compact('products', 'keyword'));
+    return view('caycanh.index', compact('products', 'keyword'));
 }
     public function create()
     {
